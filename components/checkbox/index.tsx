@@ -1,5 +1,4 @@
 import React, { ChangeEvent, FocusEvent, InputHTMLAttributes, useState, useRef, useEffect } from 'react';
-
 const Checkbox: React.FC<CheckboxProps> = ({
   autoFocus,
   checked,

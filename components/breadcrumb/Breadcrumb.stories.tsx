@@ -25,9 +25,16 @@ export const Default: Story = {
       { label: "Products", href: "/products" },
       { label: "Shoes", href: "/products/shoes" },
       { label: "Running Shoes", href: "/products/shoes/running" },
-      { label: "2024 Edition" }
+      { label: "2024 Edition" },
     ],
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Displays a default breadcrumb navigation with multiple hierarchical links, ending with the current page label without a link."
+      }
+    }
+  }
 };
 
 //  With custom separator
@@ -37,10 +44,17 @@ export const WithCustomSeparator: Story = {
       { label: "Home", href: "/" },
       { label: "Library", href: "/library" },
       { label: "Data", href: "/library/data" },
-      { label: "2024" }
+      { label: "2024" },
     ],
     separator: ">",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Shows a breadcrumb with a custom separator character (`>`), allowing customization of the divider between breadcrumb items."
+      }
+    }
+  }
 };
 
 //  Clickable items (no href, uses onClick)
@@ -52,4 +66,11 @@ export const WithOnClick: Story = {
       { label: "2024", onClick: () => alert("2024 clicked") },
     ],
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Demonstrates breadcrumbs where items are clickable using `onClick` instead of `href`, allowing interactive navigation without page reloads."
+      }
+    }
+  }
 };

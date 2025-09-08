@@ -1,0 +1,26 @@
+.ui__collapse-panel {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ui__collapse-header {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.ui__collapse-arrow {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.ui__collapse-content {
+  padding: 12px 16px;
+}

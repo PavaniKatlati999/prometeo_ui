@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Checkbox, CheckboxGroup } from "./index";
-import React from "react";  //
+import React from "react";
 
 // Meta for Checkbox
 const meta: Meta<typeof Checkbox> = {
@@ -9,9 +9,9 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   tags: ["autodocs"],
   argTypes: {
-    checked: { control: "boolean" },
-    disabled: { control: "boolean" },
-    indeterminate: { control: "boolean" },
+    checked: { control: "boolean", description: "Controls whether the checkbox is checked" },
+    disabled: { control: "boolean", description: "Disables the checkbox if true" },
+    indeterminate: { control: "boolean", description: "Displays the checkbox in an indeterminate state" },
   },
 };
 export default meta;
@@ -24,6 +24,13 @@ export const Default: Story = {
     title: "Accept Terms",
     onChange: fn(),
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "A basic, unchecked checkbox that allows users to select or deselect an option."
+      }
+    }
+  }
 };
 
 //  Checked Checkbox
@@ -33,6 +40,13 @@ export const Checked: Story = {
     checked: true,
     onChange: fn(),
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "A checkbox that is pre-checked to indicate a selected state by default."
+      }
+    }
+  }
 };
 
 //  Disabled Checkbox
@@ -41,15 +55,14 @@ export const Disabled: Story = {
     title: "Disabled Checkbox",
     disabled: true,
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "A checkbox that is disabled and cannot be interacted with."
+      }
+    }
+  }
 };
-
-//  Indeterminate Checkbox
-// export const Indeterminate: Story = {
-//   args: {
-//     title: "Indeterminate Checkbox",
-//     indeterminate: true,
-//   },
-// };
 
 //  Indeterminate Example with Children
 export const IndeterminateExample: StoryObj = {
@@ -99,28 +112,11 @@ export const IndeterminateExample: StoryObj = {
       </div>
     );
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Demonstrates an indeterminate checkbox where the parent reflects partial selection of child checkboxes. Selecting/deselecting all updates the parent accordingly."
+      }
+    }
+  }
 };
-
-
-// ----------------------
-//  Group Stories
-// ----------------------
-// export const GroupDefault: StoryObj<typeof CheckboxGroup> = {
-//   render: (args) => <CheckboxGroup {...args} />,
-//   args: {
-//     options: ["Option A", "Option B", "Option C"],
-//     defaultValue: ["Option A"],
-//     onChange: fn(),
-//   },
-// };
-
-// export const GroupDisabled: StoryObj<typeof CheckboxGroup> = {
-//   render: (args) => <CheckboxGroup {...args} />,
-//   args: {
-//     options: [
-//       { label: "Enabled Option", value: "enabled" },
-//       { label: "Disabled Option", value: "disabled", disabled: true },
-//     ],
-//     defaultValue: ["enabled"],
-//   },
-// };

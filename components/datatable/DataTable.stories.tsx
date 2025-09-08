@@ -46,6 +46,13 @@ export const Default: Story = {
     columns,
     dataSource: sampleData,
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "A simple client-side table displaying sample user data with default settings."
+      }
+    }
+  }
 };
 
 //  With Global Search (pre-filled query)
@@ -62,8 +69,14 @@ export const WithSearch: Story = {
       input.dispatchEvent(new Event("input", { bubbles: true }));
     }
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Table with global search enabled. The `play` function demonstrates pre-filling the search input."
+      }
+    }
+  }
 };
-
 
 //  With Sorting Enabled
 export const WithSorting: Story = {
@@ -71,6 +84,13 @@ export const WithSorting: Story = {
     columns,
     dataSource: sampleData,
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Demonstrates client-side sorting by column values. Click column headers to sort."
+      }
+    }
+  }
 };
 
 //  With Pagination (client-side)
@@ -80,6 +100,13 @@ export const WithPagination: Story = {
     dataSource: sampleData,
     pageSize: 2,
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "A table demonstrating client-side pagination, displaying a limited number of rows per page."
+      }
+    }
+  }
 };
 
 //  With Infinite Scroll (mocked server fetch)
@@ -92,7 +119,7 @@ export const InfiniteScroll: Story = {
     pageSize: 2,
     total: 10,
     fetchFromServer: async (page = 0, pageSize = 2) => {
-      await new Promise((res) => setTimeout(res, 800)); // simulate delay
+      await new Promise((res) => setTimeout(res, 800));
       return Array.from({ length: pageSize }).map((_, i) => ({
         id: page * pageSize + i + 1,
         name: `User ${page * pageSize + i + 1}`,
@@ -101,6 +128,13 @@ export const InfiniteScroll: Story = {
       }));
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Table with server-side infinite scroll. Additional rows are fetched asynchronously as the user scrolls."
+      }
+    }
+  }
 };
 
 export const WithSearchControlled: Story = {
@@ -109,8 +143,14 @@ export const WithSearchControlled: Story = {
     dataSource: sampleData,
     enableGlobalSearch: true,
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Demonstrates a controlled global search input, allowing external control over the search value."
+      }
+    }
+  }
 };
-
 
 //  Empty State
 export const EmptyState: Story = {
@@ -118,4 +158,11 @@ export const EmptyState: Story = {
     columns,
     dataSource: [],
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Displays the table when there is no data, showing an empty state."
+      }
+    }
+  }
 };

@@ -24,6 +24,13 @@ export const Default: Story = {
     body: "This is a simple card with body content.",
     footer: "Card footer",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Displays a basic card with a title, body, and footer. Useful for default layouts."
+      }
+    }
+  }
 };
 
 //  Card with Image
@@ -34,6 +41,13 @@ export const WithImage: Story = {
     imageUrl: "https://via.placeholder.com/400x200",
     footer: "Footer content",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Shows a card with an image above the content, demonstrating image integration in the card."
+      }
+    }
+  }
 };
 
 //  Variant Cards
@@ -44,6 +58,13 @@ export const Primary: Story = {
     variant: "primary",
     footer: "Primary footer",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Card styled with the 'primary' variant to indicate importance or main actions."
+      }
+    }
+  }
 };
 
 export const Danger: Story = {
@@ -53,6 +74,13 @@ export const Danger: Story = {
     variant: "danger",
     footer: "Danger footer",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Card styled with the 'danger' variant to indicate critical or destructive actions."
+      }
+    }
+  }
 };
 
 export const Success: Story = {
@@ -62,6 +90,13 @@ export const Success: Story = {
     variant: "success",
     footer: "Success footer",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Card styled with the 'success' variant to indicate positive outcomes or confirmations."
+      }
+    }
+  }
 };
 
 //  Card with Extra Actions
@@ -69,9 +104,16 @@ export const WithExtra: Story = {
   args: {
     title: "Card with Extra Action",
     body: "This card has extra content in the header.",
-    extra: "Action", // plain text, not JSX
+    extra: "Action",
     footer: "Footer text",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Demonstrates a card that includes extra content or actions in the header section."
+      }
+    }
+  }
 };
 
 //  Clickable Card
@@ -81,6 +123,13 @@ export const Clickable: Story = {
     body: "Clicking this card will log an action.",
     footer: "Click me!",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Shows a card designed to be interactive, triggering an action when clicked."
+      }
+    }
+  }
 };
 
 //  Card with Custom Children
@@ -94,4 +143,11 @@ export const WithChildren: Story = {
     ),
     footer: "Custom footer",
   },
+  parameters: {
+    docs: {
+      description: {
+        story: "Demonstrates using custom children inside the card, overriding the default body prop for more flexible layouts."
+      }
+    }
+  }
 };

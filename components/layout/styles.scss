@@ -1,0 +1,63 @@
+.custom-layout {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 0;
+  background: #f0f2f5;
+}
+
+.custom-layout.has-sider {
+  flex-direction: row;
+}
+
+.custom-header, .custom-footer {
+  padding: 0 50px;
+  background: #7dbcea;
+}
+
+.custom-content {
+  flex: auto;
+  padding: 24px;
+}
+
+.custom-sider {
+  flex: 0 0 200px;
+  max-width: 200px;
+  min-width: 200px;
+  background: #3ba0e9;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-sider.collapsed {
+  flex: 0 0 80px;
+  max-width: 80px;
+  min-width: 80px;
+}
+
+.sider-toggle {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  background: #005db4;
+  color: white;
+  font-size: 15px;
+  line-height: 23px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  /* transition: background 2.3s; */
+}
+
+.sider-toggle-bottom {
+  top: auto;
+  bottom: 10px;
+}
+
+.sider-toggle-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,26 @@
+{
+  "language": "en",
+  "words": [
+    "svgs",
+    "dispatch",
+    "prometeo",
+    "login",
+    "nrg",
+    "arcus",
+    "arcuspower"
+  ],
+  "ignorePaths": [
+    "doc",
+    "archive",
+    "private",
+    "node_modules",
+    "**/node_modules",
+    "**/node_modules/**",
+    "node_modules/**",
+    "vscode-extension",
+    ".git",
+    "*.dll",
+    "**/*.dll"
+  ],
+  "flagWords": []
+}

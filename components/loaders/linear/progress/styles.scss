@@ -1,0 +1,27 @@
+.linear-progress-container {
+    position: relative;
+    height: 0.3rem;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .linear-progress-bar {
+    height: 100%;
+    background-color: #005DB4;
+    border-radius: 4px;
+    animation: move 1.6s ease-in-out infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  

@@ -1,0 +1,59 @@
+.datepicker {
+  position: relative;
+  display: inline-block;
+}
+
+.datepicker-input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+.datepicker-calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 220px;
+}
+
+.calendar-date {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.calendar-date:hover {
+  background-color: #e6f7ff;
+}
+
+.calendar-date-selected {
+  background-color: #1890ff;
+  color: white;
+}
+
+.calendar-date-disabled {
+  color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.datepicker-clear {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+}

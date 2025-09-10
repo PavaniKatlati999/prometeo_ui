@@ -1,6 +1,6 @@
 .table-container {
   border: 1px solid #dee2e6;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #fff;
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -26,7 +26,7 @@
 
 .excel-table th,
 .excel-table td {
-  padding: 10px 12px;
+  padding: 8px 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -38,7 +38,7 @@
   top: 0;
   background: #f8f9fa;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 16px;
   color: #495057;
   border-bottom: 2px solid #dee2e6;
   z-index: 30;
@@ -84,7 +84,7 @@
 }
 
 .data-table-search input {
-  padding: 6px 10px;
+  padding: 8px 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
@@ -113,14 +113,14 @@
 .data-table th {
   text-align: left;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 16px;
   color: #333;
   user-select: none;
   cursor: pointer;
   position: sticky;
   top: 0;
   background: #f8f9fa;
-  padding: 8px 10px;
+  padding: 8px 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -136,7 +136,7 @@
 }
 
 .data-table td {
-  padding: 8px 10px;
+  padding: 8px 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -154,8 +154,8 @@
 }
 
 .pagination-controls button {
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   cursor: pointer;
 }
@@ -199,7 +199,7 @@
 
   table tr {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
@@ -210,7 +210,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 10px;
+    padding: 8px 16px;
     border: none !important;
     min-width: unset !important;
     width: 100% !important;

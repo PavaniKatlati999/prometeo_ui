@@ -1,3 +1,4 @@
+/* styles.scss */
 .custom-layout {
   display: flex;
   flex: auto;
@@ -10,14 +11,20 @@
   flex-direction: row;
 }
 
-.custom-header, .custom-footer {
+.custom-header,
+.custom-footer {
   padding: 0 50px;
   background: #7dbcea;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .custom-content {
   flex: auto;
   padding: 24px;
+  overflow: auto;
 }
 
 .custom-sider {
@@ -27,6 +34,7 @@
   background: #3ba0e9;
   position: relative;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .custom-sider.collapsed {
@@ -49,7 +57,11 @@
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
-  /* transition: background 2.3s; */
+  transition: background 0.3s;
+}
+
+.sider-toggle:hover {
+  background: #003a75;
 }
 
 .sider-toggle-bottom {

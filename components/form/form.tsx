@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import "./styles.scss"
 
 /**
- * @description A reusable Form component to handle form submissions and input changes.
- * @component
- * @param {FormProps} props - The properties for the Form component.
- * @returns {JSX.Element} The Form component.
- */
+* A Form component to manage input fields, validation, and submission.
+ * Supports controlled/uncontrolled fields, nested inputs, and customizable layout.
+ * Useful for any kind of user input or data submission interface.
+ *  */
 
 
 const Form: React.FC<FormProps> = ({ onSubmit, className, children }) => {

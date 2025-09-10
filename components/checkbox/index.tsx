@@ -1,4 +1,13 @@
 import React, { ChangeEvent, FocusEvent, InputHTMLAttributes, useState, useRef, useEffect } from 'react';
+import './styles.scss';
+
+/**
+ *
+ * A reusable Checkbox component for single selection, supporting checked,
+ * defaultChecked, disabled, and indeterminate states. It can be controlled
+ * or uncontrolled, and provides onChange, onBlur, and onFocus event handlers.
+ *
+ */
 const Checkbox: React.FC<CheckboxProps> = ({
   autoFocus,
   checked,
@@ -31,7 +40,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   };
 
   return (
-    <label>
+    <label className={`custom-checkbox ${disabled ? "disabled" : ""}`}>
       <input
         ref={inputRef}
         type="checkbox"
@@ -43,7 +52,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
         onFocus={onFocus}
         {...rest}
       />
-      <span>{rest.title}</span>
+      <span className="checkmark"></span>
+      <span className="label-text">{rest.title}</span>
       {indeterminate && <span style={{ display: 'inline-block', width: '14px', height: '14px', border: '1px solid #ccc' }}></span>}
     </label>
   );

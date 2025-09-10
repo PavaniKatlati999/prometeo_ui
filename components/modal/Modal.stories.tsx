@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Modal from "./index";
-import Button from "../button"; //   fixed import
+import Button from "../button";
 
 const meta: Meta<typeof Modal> = {
   title: "Components/Modal",
@@ -21,7 +21,7 @@ export default meta;
 
 type Story = StoryObj<typeof Modal>;
 
-//   Default Modal
+// 🔹 Default Modal
 export const Default: Story = {
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -37,9 +37,12 @@ export const Default: Story = {
   args: {
     title: "Default Modal",
   },
+  parameters: {
+    docs: { description: { story: "A simple modal with a default title and body content." } },
+  },
 };
 
-//   Modal with Footer
+// 🔹 Modal with Footer
 export const WithFooter: Story = {
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -65,9 +68,12 @@ export const WithFooter: Story = {
   args: {
     title: "Modal with Footer",
   },
+  parameters: {
+    docs: { description: { story: "A modal that includes a footer with Cancel and Confirm actions." } },
+  },
 };
 
-//   Non-Closable Modal
+// 🔹 Non-Closable Modal
 export const NonClosable: Story = {
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -82,9 +88,12 @@ export const NonClosable: Story = {
     isClosable: false,
     maskClosable: false,
   },
+  parameters: {
+    docs: { description: { story: "A modal that cannot be closed by the mask click or the close button." } },
+  },
 };
 
-//   Wide Modal
+// 🔹 Wide Modal
 export const Wide: Story = {
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -98,9 +107,12 @@ export const Wide: Story = {
     title: "Wide Modal",
     width: 800,
   },
+  parameters: {
+    docs: { description: { story: "A modal with increased width to accommodate wider content." } },
+  },
 };
 
-//   Centered vs Top-Aligned
+// 🔹 Top-Aligned Modal
 export const TopAligned: Story = {
   render: (args) => {
     const [open, setOpen] = useState(true);
@@ -113,5 +125,8 @@ export const TopAligned: Story = {
   args: {
     title: "Top-Aligned Modal",
     centered: false,
+  },
+  parameters: {
+    docs: { description: { story: "A modal aligned to the top instead of the center of the screen." } },
   },
 };

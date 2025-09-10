@@ -44,7 +44,7 @@ export default meta;
 
 type Story = StoryObj<typeof Table<User>>;
 
-//   Default Table
+// Default Table
 export const Default: Story = {
   render: (args) => {
     const [rows, setRows] = useState(sampleData);
@@ -55,9 +55,10 @@ export const Default: Story = {
     selectable: true,
     editable: true,
   },
+  parameters: { docs: { description: { story: "A default table with selectable and editable rows." } } },
 };
 
-//   Non-Selectable
+// Non-Selectable Table
 export const NonSelectable: Story = {
   render: (args) => {
     const [rows, setRows] = useState(sampleData);
@@ -67,9 +68,10 @@ export const NonSelectable: Story = {
     pageSize: 5,
     selectable: false,
   },
+  parameters: { docs: { description: { story: "A table where rows cannot be selected." } } },
 };
 
-//   Non-Editable
+// Non-Editable Table
 export const NonEditable: Story = {
   render: (args) => {
     const [rows, setRows] = useState(sampleData);
@@ -79,19 +81,19 @@ export const NonEditable: Story = {
     pageSize: 5,
     editable: false,
   },
+  parameters: { docs: { description: { story: "A table where rows cannot be edited." } } },
 };
 
-//   With Loading State
+// Loading State Table
 export const Loading: Story = {
-  render: (args) => (
-    <Table {...args} data={[]} columns={columns} loading />
-  ),
+  render: (args) => <Table {...args} data={[]} columns={columns} loading />,
   args: {
     pageSize: 5,
   },
+  parameters: { docs: { description: { story: "Shows a loading state when data is being fetched." } } },
 };
 
-//   Custom Render Column
+// Table with Custom Render Column
 export const CustomRender: Story = {
   render: (args) => {
     const [rows, setRows] = useState(sampleData);
@@ -108,4 +110,5 @@ export const CustomRender: Story = {
   args: {
     pageSize: 5,
   },
+  parameters: { docs: { description: { story: "A table with a custom render column for actions or buttons." } } },
 };

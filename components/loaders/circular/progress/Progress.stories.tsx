@@ -19,43 +19,52 @@ export default meta;
 
 type Story = StoryObj<typeof CircularProgress>;
 
-//   Default Loader
+// 🔹 Default Loader
 export const Default: Story = {
   args: {
     options: {
       size: "40px",
-      thickness: "4px",
+      thickness: "8px",
       speed: "1s",
       position: "relative",
     },
   },
 };
+Default.parameters = {
+  docs: { description: { story: "A basic circular loader with default size and speed." } },
+};
 
-//   Large Loader
+// 🔹 Large Loader
 export const Large: Story = {
   args: {
     options: {
       size: "80px",
-      thickness: "6px",
+      thickness: "8px",
       speed: "1.2s",
       position: "relative",
     },
   },
 };
+Large.parameters = {
+  docs: { description: { story: "A larger loader for more prominent loading indicators." } },
+};
 
-//   Fast Loader
+// 🔹 Fast Loader
 export const Fast: Story = {
   args: {
     options: {
       size: "50px",
-      thickness: "4px",
+      thickness: "8px",
       speed: "0.5s",
       position: "relative",
     },
   },
 };
+Fast.parameters = {
+  docs: { description: { story: "A loader that spins faster than the default speed." } },
+};
 
-//   With Counter
+// 🔹 With Counter
 export const WithCounter: Story = {
   args: {
     options: {
@@ -68,8 +77,11 @@ export const WithCounter: Story = {
     },
   },
 };
+WithCounter.parameters = {
+  docs: { description: { story: "Displays a loader with a counter value inside the spinner." } },
+};
 
-//   Fullscreen Loader
+// 🔹 Fullscreen Loader
 export const FullScreen: Story = {
   args: {
     options: {
@@ -81,4 +93,7 @@ export const FullScreen: Story = {
       value: "Loading...",
     },
   },
+};
+FullScreen.parameters = {
+  docs: { description: { story: "A fullscreen loader, fixed in position, for full-page loading states." } },
 };

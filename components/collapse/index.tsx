@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import CollapseUI from "./CollapseUI";
 import "./styles.scss";
+/**
+ *
+ * A reusable CollapsePanel component to show or hide content sections with a toggle.
+ * Supports controlled or uncontrolled state, custom headers, and collapsible content.
+ * Ideal for FAQs, accordion lists, or expandable content areas.
+ */
 
-export interface CollapsePanelProps {
-  header: React.ReactNode;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
-  onToggle?: (open: boolean) => void;
-}
 
 const CollapsePanel: React.FC<CollapsePanelProps> = ({
   header,

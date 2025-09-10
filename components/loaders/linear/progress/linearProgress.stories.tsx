@@ -18,50 +18,62 @@ export default meta;
 
 type Story = StoryObj<typeof LinearProgress>;
 
-//   Default Progress
+// 🔹 Default Progress
 export const Default: Story = {
   args: {
     size: "200px",
     value: 50,
     backgroundColor: "#005DB4",
-    borderRadius: "4px",
+    borderRadius: "8px",
   },
 };
+Default.parameters = {
+  docs: { description: { story: "A basic progress bar at 50% completion." } },
+};
 
-//   Full Progress
+// 🔹 Full Progress
 export const Full: Story = {
   args: {
     size: "200px",
     value: 100,
     backgroundColor: "green",
-    borderRadius: "4px",
+    borderRadius: "8px",
   },
 };
+Full.parameters = {
+  docs: { description: { story: "Progress bar fully completed at 100%." } },
+};
 
-//   Empty Progress
+// 🔹 Empty Progress
 export const Empty: Story = {
   args: {
     size: "200px",
     value: 0,
     backgroundColor: "#ccc",
-    borderRadius: "4px",
+    borderRadius: "8px",
   },
 };
+Empty.parameters = {
+  docs: { description: { story: "An empty progress bar with 0% completion." } },
+};
 
-//   Custom Colors
+// 🔹 Custom Colors
 export const CustomColors: Story = {
   args: {
     size: "250px",
     value: 70,
     backgroundColor: "orange",
-    borderRadius: "10px",
+    borderRadius: "16px",
   },
 };
+CustomColors.parameters = {
+  docs: { description: { story: "A progress bar with custom color and border radius." } },
+};
 
-//   Thin Bar
+// 🔹 Thin Bar
 export const Thin: Story = {
   render: (args) => (
-    <div style={{ height: "6px" }}>
+    <div style={{ height: "8px" }}>
       <LinearProgress {...args} />
     </div>
   ),
@@ -71,4 +83,7 @@ export const Thin: Story = {
     backgroundColor: "red",
     borderRadius: "2px",
   },
+};
+Thin.parameters = {
+  docs: { description: { story: "A thin linear progress bar, suitable for compact UI areas." } },
 };

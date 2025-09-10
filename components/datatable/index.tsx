@@ -16,13 +16,10 @@ import { DataTableStructure } from "./interface"
 import { useVirtualizer } from '@tanstack/react-virtual'
 
 /**
- * @description A reusable DataTable component for displaying tabular data.
+ *  A reusable DataTable component for displaying tabular data.
  * Supports client-side and server-side rendering, pagination, infinite scroll,
  * column pinning, sorting, and global search.
  *
- * @component
- * @param {DataTableStructure<T>} props - The properties for the DataTable component.
- * @returns {JSX.Element} The DataTable component.
  */
 
 export default function DataTable<T extends object>({
@@ -252,7 +249,7 @@ export default function DataTable<T extends object>({
   const totalPages = Math.ceil(totalCount / (pageSize ?? 20))
 
   return (
-    <div style={{ width: "95%", position: "relative", left: "20px", fontFamily: "Inter, system-ui, sans-serif" }}>
+    <div style={{ width: "95%", position: "relative", left: "24px", fontFamily: "Inter, system-ui, sans-serif" }}>
       {/* global search input */}
       {enableGlobalSearch && (
         <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 8 }}>
@@ -302,7 +299,7 @@ export default function DataTable<T extends object>({
                     >
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                       {header.column.getCanSort() && (
-                        <span style={{ fontSize: "12px" }}>
+                        <span style={{ fontSize: "16px" }}>
                           {{
                             asc: " 🔼",
                             desc: " 🔽",
@@ -357,14 +354,14 @@ export default function DataTable<T extends object>({
       {enablePagination && (
         <div
           className="pagination-controls"
-          style={{ display: "flex", alignItems: "center", justifyContent: "end", marginTop: "12px", gap: "8px", flexWrap: "wrap" }}
+          style={{ display: "flex", alignItems: "center", justifyContent: "end", marginTop: "16px", gap: "8px", flexWrap: "wrap" }}
         >
           <button
             onClick={() => setPage(p => Math.max(p - 1, 0))}
             disabled={page === 0}
             style={{
               padding: "6px 12px",
-              borderRadius: "6px",
+              borderRadius: "8px",
               border: "1px solid #ddd",
               background: page === 0 ? "#f5f5f5" : "#fff",
               color: page === 0 ? "#999" : "#000",
@@ -373,7 +370,7 @@ export default function DataTable<T extends object>({
           >
             ◀
           </button>
-          <div style={{ display: "flex", gap: "6px" }}>
+          <div style={{ display: "flex", gap: "8px" }}>
             {Array.from({ length: totalPages }).map((_, i) => {
               if (i === 0 || i === totalPages - 1 || (i >= page - 1 && i <= page + 1)) {
                 return (
@@ -384,7 +381,7 @@ export default function DataTable<T extends object>({
                     }}
                     style={{
                       padding: "6px 12px",
-                      borderRadius: "6px",
+                      borderRadius: "8px",
                       border: "1px solid #ddd",
                       background: i === page ? "#228be6" : "#fff",
                       color: i === page ? "#fff" : "#000",
@@ -411,7 +408,7 @@ export default function DataTable<T extends object>({
             disabled={page === totalPages - 1}
             style={{
               padding: "6px 12px",
-              borderRadius: "6px",
+              borderRadius: "8px",
               border: "1px solid #ddd",
               background: page === totalPages - 1 ? "#f5f5f5" : "#fff",
               color: page === totalPages - 1 ? "#999" : "#000",

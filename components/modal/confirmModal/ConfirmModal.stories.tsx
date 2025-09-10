@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import ConfirmModalComponent from "./index"; // 👈 import the component (not the wrapper)
+import ConfirmModalComponent from "./index";
 import Button from "../../button";
 
 const meta: Meta<typeof ConfirmModalComponent> = {
@@ -24,7 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof ConfirmModalComponent>;
 
-//  Default Confirm Modal
+// 🔹 Default Confirm Modal
 export const Default: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -49,9 +49,12 @@ export const Default: Story = {
     content: "This action cannot be undone.",
     type: "default",
   },
+  parameters: {
+    docs: { description: { story: "A basic confirm modal with default type and cancel/ok actions." } },
+  },
 };
 
-//  Success Modal
+// 🔹 Success Modal
 export const Success: Story = {
   ...Default,
   args: {
@@ -60,9 +63,12 @@ export const Success: Story = {
     type: "success",
     okText: "Great!",
   },
+  parameters: {
+    docs: { description: { story: "Displays a success confirm modal with custom OK text." } },
+  },
 };
 
-//  Warning Modal
+// 🔹 Warning Modal
 export const Warning: Story = {
   ...Default,
   args: {
@@ -72,9 +78,12 @@ export const Warning: Story = {
     okText: "Proceed",
     cancelText: "Cancel",
   },
+  parameters: {
+    docs: { description: { story: "Displays a warning confirm modal for cautionary actions." } },
+  },
 };
 
-//  Error Modal
+// 🔹 Error Modal
 export const Error: Story = {
   ...Default,
   args: {
@@ -84,9 +93,12 @@ export const Error: Story = {
     okText: "Close",
     showCancelButton: false,
   },
+  parameters: {
+    docs: { description: { story: "Displays an error confirm modal without a cancel button." } },
+  },
 };
 
-//  Delete Modal
+// 🔹 Delete Modal
 export const Delete: Story = {
   ...Default,
   args: {
@@ -95,5 +107,8 @@ export const Delete: Story = {
     type: "delete",
     okText: "Delete",
     cancelText: "Cancel",
+  },
+  parameters: {
+    docs: { description: { story: "A delete confirm modal for destructive actions with both OK and Cancel options." } },
   },
 };

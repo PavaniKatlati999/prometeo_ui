@@ -5,10 +5,8 @@ import classNames from 'classnames';
 import "./styles.scss"
 
 /**
- * @description A reusable DatePicker component to select dates.
- * @component
- * @param {DatePickerProps} props - The properties for the DatePicker component.
- * @returns {JSX.Element} The DatePicker component.
+ * A DatePicker component for selecting dates (single or range) with optional formatting,
+ * min/max dates, and disabled states. Suitable for forms, scheduling, or calendar inputs.
  */
 const DatePicker: React.FC<DatePickerProps> =({
   value,

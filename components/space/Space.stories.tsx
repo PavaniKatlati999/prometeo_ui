@@ -24,7 +24,12 @@ export const Default: Story = {
   ),
   args: {
     className: "",
-    style: { gap: "16px", display: "flex" }, // inline style for spacing
+    style: { gap: "16px", display: "flex" },
+  },
+  parameters: {
+    docs: {
+      description: { story: "Default horizontal spacing between elements using SpaceUI." },
+    },
   },
 };
 
@@ -37,7 +42,12 @@ export const Vertical: Story = {
     </SpaceUI>
   ),
   args: {
-    style: { display: "flex", flexDirection: "column", gap: "12px" },
+    style: { display: "flex", flexDirection: "column", gap: "16px" },
+  },
+  parameters: {
+    docs: {
+      description: { story: "Vertical arrangement of elements with spacing applied between items." },
+    },
   },
 };
 
@@ -49,6 +59,11 @@ export const CustomStyled: Story = {
     </SpaceUI>
   ),
   args: {
-    style: { gap: "24px", display: "flex", backgroundColor: "#f5f5f5", padding: "10px" },
+    style: { gap: "24px", display: "flex", backgroundColor: "#f5f5f5", padding: "16px" },
+  },
+  parameters: {
+    docs: {
+      description: { story: "Custom styled SpaceUI with larger spacing and background for demonstration." },
+    },
   },
 };

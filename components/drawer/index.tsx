@@ -1,15 +1,10 @@
 import React, { ReactNode, useEffect } from "react";
 import "./styles.scss";
-
-export interface DrawerUIProps {
-  open: boolean; // whether the drawer is visible
-  onClose: () => void; // callback when closing
-  placement?: "left" | "right" | "top" | "bottom"; // drawer position
-  size?: number | string; // width/height of drawer
-  closable?: boolean; // show close button
-  children?: ReactNode; // drawer content
-  maskClosable?: boolean; // close on backdrop click
-}
+/**
+ * A Drawer component for sliding panels from any side of the screen.
+ * Supports closable header, mask overlay, customizable width/height, and dynamic content.
+ * Ideal for side menus, settings panels, or contextual panels.
+ */
 
 const DrawerUI: React.FC<DrawerUIProps> = ({
   open,

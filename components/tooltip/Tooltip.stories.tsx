@@ -25,13 +25,18 @@ const meta: Meta<typeof Tooltip> = {
 export default meta;
 type Story = StoryObj<typeof Tooltip>;
 
+// Default Tooltip
 export const Default: Story = {
   args: {
     content: "This is a tooltip",
     children: <button>Hover me</button>,
   },
+  parameters: {
+    docs: { description: { story: "Basic tooltip that appears on hover." } },
+  },
 };
 
+// Tooltip in all directions
 export const Directions: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "40px", justifyContent: "center", marginTop: "100px" }}>
@@ -49,8 +54,12 @@ export const Directions: Story = {
       </Tooltip>
     </div>
   ),
+  parameters: {
+    docs: { description: { story: "Showcases tooltips in all four directions." } },
+  },
 };
 
+// Tooltip with custom colors
 export const WithCustomColors: Story = {
   args: {
     content: "Custom styled tooltip",
@@ -58,8 +67,12 @@ export const WithCustomColors: Story = {
     color: "#fff",
     children: <button>Hover me</button>,
   },
+  parameters: {
+    docs: { description: { story: "Tooltip with custom background and text color." } },
+  },
 };
 
+// Controlled Tooltip
 export const Controlled: Story = {
   render: () => {
     const [open, setOpen] = React.useState(false);
@@ -67,9 +80,12 @@ export const Controlled: Story = {
       <div style={{ marginTop: "100px", textAlign: "center" }}>
         <button onClick={() => setOpen(!open)}>Toggle Tooltip</button>
         <Tooltip content="Controlled tooltip" isOpen={open}>
-          <span style={{ marginLeft: "20px" }}>Target</span>
+          <span style={{ marginLeft: "24px" }}>Target</span>
         </Tooltip>
       </div>
     );
+  },
+  parameters: {
+    docs: { description: { story: "Tooltip controlled programmatically via state." } },
   },
 };

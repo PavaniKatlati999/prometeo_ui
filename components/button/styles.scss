@@ -3,124 +3,161 @@
   border-radius: 6px !important;
   padding: 8px 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
 }
 
+/* Hover glow */
+.btn:hover:not(:disabled):not(.loading) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Click press effect */
+.btn:active:not(:disabled):not(.loading) {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Disabled state */
+.btn.disabled,
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Primary */
 .btn.primary {
   background-color: rgba(var(--color_a000), 1) !important;
   color: var(--color_001) !important;
   outline: 1px solid var(--color_a000) !important;
 }
-
-.btn.primary:hover {
-  background-color: rgba(var(--color_a000), .8) !important;
-  color: var(--color_001) !important;
+.btn.primary:hover:not(:disabled) {
+  background-color: rgba(var(--color_a000), 0.9) !important;
   outline: 1px solid var(--color_021) !important;
 }
 
+/* Secondary */
 .btn.secondary {
   background-color: var(--color_019) !important;
   color: var(--color_001) !important;
   outline: 1px solid var(--color_019) !important;
-
 }
-
-.btn.secondary:hover {
-  background-color: var(--color_019) !important;
-  color: var(--color_001) !important;
+.btn.secondary:hover:not(:disabled) {
   outline: 1px solid var(--color_021) !important;
 }
 
+/* Light */
 .btn.light {
   background-color: var(--color_001) !important;
   color: var(--color_021) !important;
-  // outline: 1px solid var(--color_021) !important;
   outline: 1px solid var(--color_020) !important;
-  // box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
 }
 
-
+/* Default */
 .btn.default {
-  text-align: center;
   background-color: #D6E8F8;
   color: rgba(0, 0, 0, 0.88) !important;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02) !important;
 }
-
-.btn.default:hover {
+.btn.default:hover:not(:disabled) {
   background-color: var(--color_001) !important;
   color: var(--color_021) !important;
   outline: 1px solid var(--color_021) !important;
 }
 
+/* Dashed */
 .btn.dashed {
   border: 1px dashed #1890ff;
   background-color: transparent;
   color: #1890ff;
+  transition: all 0.3s ease;
+}
+.btn.dashed:hover:not(:disabled) {
+  background-color: rgba(24, 144, 255, 0.1);
 }
 
+/* Text */
 .btn.text {
   background-color: transparent;
   color: #1890ff;
   border: none;
 }
+.btn.text:hover {
+  color: #40a9ff;
+  background-color: rgba(24,144,255,0.05);
+  border-radius: 8px;
+}
 
+/* Link */
 .btn.link {
   background-color: transparent;
   color: #1890ff;
   text-decoration: underline;
   border: none;
 }
-
-.btn.small {
-  padding: 8px !important;
+.btn.link:hover {
+  color: #40a9ff;
 }
 
+/* Sizes */
+.btn.small {
+  padding: 8px 12px !important;
+  font-size: 12px;
+}
 .btn.middle {
   padding: 8px 16px !important;
+  font-size: 16px;
 }
-
 .btn.large {
-  padding: 12px 24px !important;
+  padding: 16px 24px !important;
+  font-size: 16px;
 }
 
-button:disabled {
-  cursor: not-allowed;
-  pointer-events: all !important;
-}
-
+/* Spinner */
 .spinner {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top: 2px solid white;
+  border-top: 8px solid white;
   border-radius: 50%;
   width: 16px;
   height: 16px;
   animation: spin 0.6s linear infinite;
   display: inline-block;
-  margin-right: 8px; // 👈 space between spinner and text
+  margin-right: 8px;
   vertical-align: middle;
+  transition: opacity 0.3s ease;
 }
-
-.btn-icon {
-  margin: 0px 5px 0px 5px;
-  display: flex;
-  align-items: center;
-}
-
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
+/* Icon */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.btn:hover .btn-icon {
+  transform: scale(1.1);
+}
 .btn-icon img {
   width: 16px;
-  /* Increase icon width */
   height: 16px;
-  /* Increase icon height */
 }

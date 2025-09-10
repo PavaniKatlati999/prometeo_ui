@@ -3,12 +3,7 @@ import { getScrollParent } from './functions'
 import positions from './position'
 import Portal from './viewPortal'
 
-/**
- * @description A reusable Tooltip component to display a tooltip.
- * @component
- * @param {TooltipProps} props - The properties for the Tooltip component.
- * @returns {JSX.Element} The Tooltip component.
- */
+
 
 // default colors
 const defaultColor = 'white'
@@ -18,7 +13,12 @@ const resizeThrottle = 100
 const resizeThreshold = 5
 
 const stopProp = (e: React.MouseEvent) => e.stopPropagation()
-
+/**
+ * A Tooltip component to display brief contextual information when a user hovers over,
+ * focuses on, or clicks an element. Supports custom content, placement, trigger events,
+ * and delay. Useful for hints, guidance, or clarifying UI elements without cluttering
+ * the interface.
+ */
 
 
 class Tooltip extends React.Component<TooltipProps, TooltipState> {

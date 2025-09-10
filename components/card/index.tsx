@@ -2,18 +2,19 @@ import React from "react"
 import "./styles.scss"
 
 /**
- * @description A reusable Card component to display content in a visually appealing way.
- * @component
- * @param {CardProps} props - The properties for the Card component.
- * @returns {JSX.Element} The Card component.
- */
-
+ *
+ * A flexible and reusable Card component that displays content in a structured,
+ * visually appealing container. The Card supports an image, header, body, footer,
+ * and additional custom content, making it ideal for dashboards, profile cards,
+ * product listings, or any content that benefits from a card layout.
+ *
+  */
 const Card: React.FC<CardProps> = (props) => {
-  const { className, style, imageUrl, title, body, footer, variant, onClick, extra, children, } = props
+  const { className, style, imageUrl, title, body, footer, variant, onClick, extra, children } = props
 
   return (
     <div
-  className={`card ${variant ? `card-${variant}` : ""} ${className}`}
+      className={`card ${variant ? `card-${variant}` : ""} ${className}`}
       style={style}
       onClick={onClick}
     >

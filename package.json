@@ -141,7 +141,8 @@
     "@tanstack/react-table": "8.21.3",
     "@tanstack/react-virtual": "3.13.12",
     "axios": "1.11.0",
-    "dayjs": "1.11.13"
+    "dayjs": "1.11.13",
+    "lucide-react": "0.543.0"
   },
   "peerDependencies": {
     "react": "^19.1.1",

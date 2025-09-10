@@ -19,6 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof Result>;
 
+// 🔹 Success Result
 export const Success: Story = {
   args: {
     icon: <img src="/svgs/confirmModal-success.svg" width={80} height={80} />,
@@ -27,8 +28,12 @@ export const Success: Story = {
     extra: <Button onClick={() => alert("Continue clicked!")}>Continue</Button>,
     resultInsideModal: true,
   },
+  parameters: {
+    docs: { description: { story: "Displays a success message inside a modal with a call-to-action button." } },
+  },
 };
 
+// 🔹 Error Result
 export const ErrorResult: Story = {
   args: {
     icon: <img src="/svgs/error.svg" width={80} height={80} />,
@@ -42,8 +47,12 @@ export const ErrorResult: Story = {
     ),
     resultInsideModal: true,
   },
+  parameters: {
+    docs: { description: { story: "Shows an error result with retry and cancel options inside a modal." } },
+  },
 };
 
+// 🔹 Info Result Inline
 export const InfoInline: Story = {
   args: {
     icon: <img src="/svgs/confirmModal-info.svg" width={80} height={80} />,
@@ -52,8 +61,12 @@ export const InfoInline: Story = {
     extra: <Button>Okay</Button>,
     resultInsideModal: false,
   },
+  parameters: {
+    docs: { description: { story: "Displays an informational message inline, outside of a modal." } },
+  },
 };
 
+// 🔹 Warning Result
 export const Warning: Story = {
   args: {
     icon: <img src="/svgs/confirmModal-warning.svg" width={80} height={80} />,
@@ -66,5 +79,8 @@ export const Warning: Story = {
       </div>
     ),
     resultInsideModal: true,
+  },
+  parameters: {
+    docs: { description: { story: "Shows a warning result inside a modal with confirm and cancel actions." } },
   },
 };

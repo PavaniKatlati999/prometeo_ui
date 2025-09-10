@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.scss'
 
 /**
- * @description A reusable LinearProgress component to display a linear progress bar.
+ *  A reusable LinearProgress component to display a linear progress bar.
  * @component
  * @param {LinearProgressLoaderProps} props - The properties for the LinearProgress component.
  * @returns {JSX.Element} The LinearProgress component.

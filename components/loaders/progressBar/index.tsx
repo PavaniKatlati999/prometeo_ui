@@ -2,7 +2,7 @@ import React from "react"
 import "./styles.scss"
 
 /**
- * @description A reusable ProgressBar component to display a progress bar.
+ *  A reusable ProgressBar component to display a progress bar.
  * @component
  * @param {ProgressBarProps} props - The properties for the ProgressBar component.
  * @returns {JSX.Element} The ProgressBar component.

@@ -15,14 +15,12 @@ import './styles.scss';
 
 /**
  * A reusable breadcrumb navigation component.
- *
- * @component
- * @param {BreadcrumbProps} props - The props for the Breadcrumb component.
- * @returns {JSX.Element} The rendered breadcrumb navigation.
+ * Displays a default breadcrumb navigation with multiple hierarchical links, ending with the current page label without a link.
  */
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator = '/' }) => {
   return (
-    <nav className="breadcrumb">
+    <nav className="breadcrumb" aria-label="breadcrumb">
+
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
         return (
@@ -30,9 +28,11 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator = '/' }) => {
             {isLast ? (
               <span className="active">{item.label}</span>
             ) : item.href ? (
-              <a href={item.href}>{item.label}</a>
+                <a href={item.href} className="breadcrumb-link">
+                  {item.label}
+                </a>
             ) : (
-              <span onClick={item.onClick}>{item.label}</span>
+              <span className="breadcrumb-link" onClick={item.onClick} role="button">{item.label}</span>
             )}
             {!isLast && <span className="separator">{separator}</span>}
           </React.Fragment>

@@ -40,6 +40,13 @@ export const Default: Story = {
     </Form>
   ),
 };
+Default.parameters = {
+  docs: {
+    description: {
+      story: "A basic form with username and password fields. Shows standard required field behavior."
+    }
+  }
+};
 
 //  With helper + error
 export const WithValidation: Story = {
@@ -57,6 +64,13 @@ export const WithValidation: Story = {
       <Button type="submit">Submit</Button>
     </Form>
   ),
+};
+WithValidation.parameters = {
+  docs: {
+    description: {
+      story: "Form demonstrating helper text and validation errors. Use this pattern for fields requiring guidance or feedback."
+    }
+  }
 };
 
 //  Controlled form with live submission preview
@@ -84,4 +98,11 @@ export const ControlledForm: Story = {
       </div>
     );
   },
+};
+ControlledForm.parameters = {
+  docs: {
+    description: {
+      story: "A fully controlled form that shows live submission results below the form. Useful for interactive demos and testing state handling."
+    }
+  }
 };

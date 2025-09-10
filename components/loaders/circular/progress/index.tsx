@@ -3,7 +3,7 @@ import React from "react"
 import "./styles.scss"
 
 /**
- * @description A reusable CircularProgress component to display a loading animation.
+ *  A reusable CircularProgress component to display a loading animation.
  * @component
  * @param {CircularProgressProps} props - The properties for the CircularProgress component.
  * @returns {JSX.Element} The CircularProgress component.

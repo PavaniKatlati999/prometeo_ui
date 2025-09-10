@@ -4,11 +4,11 @@
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
   }
-  
+
   .tab-nav::-webkit-scrollbar {
     display: none;
   }
-  
+
   .tab-list {
     width: fit-content;
     /* Let the tab-list shrink to fit its content */
@@ -20,14 +20,14 @@
     margin: 0;
     padding: 0;
   }
-  
+
   .tab-list li {
     display: block;
     margin-bottom: -2px;
     border:1px solid #dbdada;
     border-radius: 5px;
   }
-  
+
   .tab-btn {
     font: inherit;
     padding: 0.75em 1em;
@@ -38,11 +38,11 @@
     color: inherit;
     white-space: nowrap;
   }
-  
+
   .tab-btn:not(.tab-btn--active):hover {
     color: var(--site-text-color);
   }
-  
+
   .tab-btn--active {
     color:var(--arc_primary);
     border-color: var(--tab-text-color--highlight);
@@ -50,40 +50,98 @@
     color:black;
     border-radius: 5px;
   }
-  
+
   // .tab-btn-shadow--active{
   //   margin-top: -6px;
   //   border-bottom: 4px solid var(--arc_primary);
   //   border-radius:4px 4px 0 0;
   // }
-  
+
   .tab-panel {
     margin-top: 1em;
     // padding: 1em;
     background-color: var(--tab-panel-bg-color);
     border-radius: 0.5em;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
     }
-  
+
     to {
       opacity: 1;
     }
   }
-  
+
   .tab-panel {
     animation-name: fadeIn;
     animation-duration: 500ms;
     animation-timing-function: linear;
   }
-  
+
   .tab-link-section{
     display: flex;
     align-items: center;
     margin-left: auto;
     border:none !important;
   }
-  
+
+
+
+  .ui__tab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .ui__tab-list {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 12px;
+  }
+
+  .ui__tab-button {
+    background: none;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: #007bff;
+    }
+
+    &.active {
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      font-weight: 600;
+    }
+
+    &.disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  .ui__tab-content {
+    padding: 16px;
+    font-size: 14px;
+    color: #333;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

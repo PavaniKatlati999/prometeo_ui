@@ -3,7 +3,9 @@ import Tooltip from '../tooltip'
 import "./styles.scss"
 
 /**
-* Hook that alerts clicks outside of the passed ref
+*  * A Select component for dropdown selection of single or multiple values.
+ * Supports search, disabled state, custom options, and controlled/uncontrolled behavior.
+ * Ideal for forms and filters.
 */
 function useOutsideAlerter(ref, setToggle) {
   React.useEffect(() => {

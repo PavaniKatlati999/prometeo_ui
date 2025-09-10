@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.scss";
 
+
 const statusColors = {
   success: "#52c41a",
   processing: "#1890ff",
@@ -10,7 +11,11 @@ const statusColors = {
   waiting: "#fadb14",
   stop: "#722ed1",
 };
-
+/**
+ * A Tags component to display labeled elements such as categories, keywords, or statuses.
+ * Supports customizable colors, closable tags, and dynamic rendering from a list of values.
+ * Ideal for filters, labels, and metadata display in UIs.
+ */
 const Tag: React.FC<TagProps> = ({
   children,
   color,

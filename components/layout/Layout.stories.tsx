@@ -24,17 +24,24 @@ type Story = StoryObj<typeof Layout>;
 export const Basic: Story = {
   render: () => (
     <Layout>
-      <Header style={{ background: "#1890ff", color: "white", padding: "10px" }}>
+      <Header style={{ background: "#1890ff", color: "white", padding: "16px" }}>
         Header
       </Header>
-      <Content style={{ minHeight: "200px", padding: "20px", background: "#f0f2f5" }}>
+      <Content style={{ minHeight: "200px", padding: "24px", background: "#f0f2f5" }}>
         Content Area
       </Content>
-      <Footer style={{ background: "#001529", color: "white", padding: "10px" }}>
+      <Footer style={{ background: "#001529", color: "white", padding: "16px" }}>
         Footer
       </Footer>
     </Layout>
   ),
+};
+Basic.parameters = {
+  docs: {
+    description: {
+      story: "A basic layout structure with Header, Content, and Footer. No sidebar included."
+    }
+  }
 };
 
 //  Layout with Sider (Controls Enabled)
@@ -44,22 +51,29 @@ export const WithSider: Story = {
   },
   render: (args) => (
     <Layout {...args} style={{ minHeight: "250px" }}>
-      <Sider style={{ background: "#3f51b5", color: "white", padding: "10px" }}>
+      <Sider style={{ background: "#3f51b5", color: "white", padding: "16px" }}>
         Sidebar
       </Sider>
       <Layout>
-        <Header style={{ background: "#1890ff", color: "white", padding: "10px" }}>
+        <Header style={{ background: "#1890ff", color: "white", padding: "16px" }}>
           Header
         </Header>
-        <Content style={{ padding: "20px", background: "#f0f2f5" }}>
+        <Content style={{ padding: "24px", background: "#f0f2f5" }}>
           Main Content
         </Content>
-        <Footer style={{ background: "#001529", color: "white", padding: "10px" }}>
+        <Footer style={{ background: "#001529", color: "white", padding: "16px" }}>
           Footer
         </Footer>
       </Layout>
     </Layout>
   ),
+};
+WithSider.parameters = {
+  docs: {
+    description: {
+      story: "A layout including a sidebar (Sider) with adjustable properties. Useful for dashboards or admin panels."
+    }
+  }
 };
 
 //  Collapsible Sider (Interactive with Controls)
@@ -80,22 +94,29 @@ export const CollapsibleSider: Story = {
           collapsed={isCollapsed}
           onCollapse={setIsCollapsed}
           width={width}
-          style={{ background: "#3f51b5", color: "white", padding: "10px" }}
+          style={{ background: "#3f51b5", color: "white", padding: "16px" }}
         >
           {isCollapsed ? "C" : "Sidebar Content"}
         </Sider>
         <Layout>
-          <Header style={{ background: "#1890ff", color: "white", padding: "10px" }}>
+          <Header style={{ background: "#1890ff", color: "white", padding: "16px" }}>
             Header
           </Header>
-          <Content style={{ padding: "20px", background: "#f0f2f5" }}>
+          <Content style={{ padding: "24px", background: "#f0f2f5" }}>
             Content with collapsible sidebar
           </Content>
-          <Footer style={{ background: "#001529", color: "white", padding: "10px" }}>
+          <Footer style={{ background: "#001529", color: "white", padding: "16px" }}>
             Footer
           </Footer>
         </Layout>
       </Layout>
     );
   },
+};
+CollapsibleSider.parameters = {
+  docs: {
+    description: {
+      story: "A layout with a collapsible sidebar. Users can toggle the sidebar open/closed interactively."
+    }
+  }
 };

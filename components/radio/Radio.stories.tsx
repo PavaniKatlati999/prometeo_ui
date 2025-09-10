@@ -1,4 +1,4 @@
-import React, { useState } from "react"; //   add this
+import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Radio from "./index";
 
@@ -14,16 +14,19 @@ export default meta;
 
 type Story = StoryObj<typeof Radio>;
 
-//   Default Radio (uncontrolled)
+//  Default Radio (uncontrolled)
 export const Default: Story = {
   args: {
     label: "Default Option",
     name: "group1",
     value: "A",
   },
+  parameters: {
+    docs: { description: { story: "A simple uncontrolled radio button with default state." } },
+  },
 };
 
-//   Checked Radio (controlled with state)
+//  Checked Radio (controlled with state)
 export const Checked: Story = {
   render: (args) => {
     const [selected, setSelected] = useState(true);
@@ -40,9 +43,12 @@ export const Checked: Story = {
     name: "group1",
     value: "B",
   },
+  parameters: {
+    docs: { description: { story: "A controlled radio button that starts checked and updates state on change." } },
+  },
 };
 
-//   Disabled Radio
+//  Disabled Radio
 export const Disabled: Story = {
   args: {
     label: "Disabled Option",
@@ -50,9 +56,12 @@ export const Disabled: Story = {
     value: "C",
     disabled: true,
   },
+  parameters: {
+    docs: { description: { story: "A radio button that is disabled and cannot be interacted with." } },
+  },
 };
 
-//   Radio Group Example
+//  Radio Group Example
 export const Group: Story = {
   render: () => {
     const [selected, setSelected] = useState("A");
@@ -74,5 +83,8 @@ export const Group: Story = {
         />
       </div>
     );
+  },
+  parameters: {
+    docs: { description: { story: "A group of radio buttons demonstrating selection among multiple options." } },
   },
 };

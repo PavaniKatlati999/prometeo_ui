@@ -27,6 +27,13 @@ export const Default: Story = {
     onChange: fn(),
   },
 };
+Default.parameters = {
+  docs: {
+    description: {
+      story: "A standard text input. Use this for general text entry."
+    }
+  }
+};
 
 //  With Default Value
 export const WithDefaultValue: Story = {
@@ -34,6 +41,13 @@ export const WithDefaultValue: Story = {
     defaultValue: "Hello World",
     onChange: fn(),
   },
+};
+WithDefaultValue.parameters = {
+  docs: {
+    description: {
+      story: "An input pre-filled with a default value. Useful for forms with existing data."
+    }
+  }
 };
 
 //  Password Input with Toggle
@@ -45,6 +59,13 @@ export const PasswordWithToggle: Story = {
     onChange: fn(),
   },
 };
+PasswordWithToggle.parameters = {
+  docs: {
+    description: {
+      story: "A password input with a toggle to show/hide the entered text."
+    }
+  }
+};
 
 //  Disabled Input
 export const Disabled: Story = {
@@ -52,6 +73,13 @@ export const Disabled: Story = {
     placeholder: "Disabled input",
     disabled: true,
   },
+};
+Disabled.parameters = {
+  docs: {
+    description: {
+      story: "A disabled input field. Users cannot interact with it."
+    }
+  }
 };
 
 //  Input with Validation Error
@@ -62,6 +90,13 @@ export const WithError: Story = {
     className: "error-input",
     onChange: fn(),
   },
+};
+WithError.parameters = {
+  docs: {
+    description: {
+      story: "An input showing a validation error message. Useful for form feedback."
+    }
+  }
 };
 
 //  Number Input
@@ -74,6 +109,13 @@ export const NumberInput: Story = {
     onChange: fn(),
   },
 };
+NumberInput.parameters = {
+  docs: {
+    description: {
+      story: "A number-only input field. Supports min/max length restrictions."
+    }
+  }
+};
 
 //  ReadOnly Input
 export const ReadOnly: Story = {
@@ -81,4 +123,11 @@ export const ReadOnly: Story = {
     value: "This is readonly",
     readOnly: true,
   },
+};
+ReadOnly.parameters = {
+  docs: {
+    description: {
+      story: "A read-only input field. Users can copy the content but not edit it."
+    }
+  }
 };

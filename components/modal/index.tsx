@@ -2,7 +2,9 @@ import React from 'react'
 import "./styles.scss"
 
 /**
- * @description A reusable Modal component to display a modal window.
+ *  A Modal component to display overlay dialogs with header, body, and footer.
+ * Supports customizable size, closable options, mask, and dynamic content.
+ * Ideal for confirmations, forms, or contextual information.
  * @component
  * @param {ModalProps} props - The properties for the Modal component.
  * @returns {JSX.Element} The Modal component.

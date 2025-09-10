@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.scss'
 
 /**
+ *  A reusable Button component to perform actions
  * @description A reusable Button component to perform actions.
  * @component
  * @param {ButtonProps} props - The properties for the Button component.

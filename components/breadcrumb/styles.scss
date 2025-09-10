@@ -5,25 +5,77 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
 }
 
 .breadcrumb a,
-.breadcrumb span {
+.breadcrumb .breadcrumb-link {
   margin-right: 8px;
   text-decoration: none;
-  color: gray;
-}
+  color: #666;
+  position: relative;
+  transition: color 0.25s ease;
+  cursor: pointer;
 
-.breadcrumb a:hover {
-  color: #23527c;
+  &:hover {
+    color: #1890ff;
+  }
+
+  /* Underline animation */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 8px;
+    width: 0;
+    background: #1890ff;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 .breadcrumb .separator {
   margin: 0 8px;
-  color: #ccc;
+  color: #bbb;
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+  font-weight: 300;
 }
 
 .breadcrumb .active {
-  color: black;
+  color: #000;
+  font-weight: 600;
+  cursor: default;
   pointer-events: none;
+  position: relative;
+
+  /* Active indicator */
+  &::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #1890ff;
+    border-radius: 50%;
+  }
+}
+
+/* Separator animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

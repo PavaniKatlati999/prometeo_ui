@@ -1,5 +1,28 @@
 .ui__space {
-  display: flex;
+  display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px
+  gap: 8px; // default spacing
+}
+
+/* Variants for direction */
+.ui__space--horizontal {
+  flex-direction: row;
+}
+
+.ui__space--vertical {
+  flex-direction: column;
+}
+
+/* Size modifiers */
+.ui__space--small {
+  gap: 8px;
+}
+
+.ui__space--medium {
+  gap: 16px;
+}
+
+.ui__space--large {
+  gap: 24px;
 }

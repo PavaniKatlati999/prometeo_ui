@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
 
-export interface CountDownUIProps {
-  /** Target date/time for countdown */
-  targetDate: Date | string | number;
-  /** Callback when countdown finishes */
-  onFinish?: () => void;
-  /** Optional custom className */
-  className?: string;
-}
+/**
+ * A CountdownUI component to display a countdown timer to a target date or duration.
+ * Supports custom formatting, start/pause/reset controls, and callback on completion.
+ * Ideal for timers, events, or deadlines in dashboards or apps.
+ */
 
 const CountDownUI: React.FC<CountDownUIProps> = ({
   targetDate,

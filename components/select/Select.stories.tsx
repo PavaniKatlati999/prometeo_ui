@@ -24,9 +24,7 @@ const sampleOptions = [
   { label: "Pineapple", value: "pineapple" },
 ];
 
-/**
- *   Single Select Stories
- */
+/** Single Select Stories */
 export const SingleDefault: Story = {
   render: (args) => {
     const [value, setValue] = useState<string | null>(null);
@@ -40,9 +38,8 @@ export const SingleDefault: Story = {
       />
     );
   },
-  args: {
-    mode: "single",
-  },
+  args: { mode: "single" },
+  parameters: { docs: { description: { story: "Single select dropdown with no default value selected." } } },
 };
 
 export const SingleWithValue: Story = {
@@ -58,9 +55,8 @@ export const SingleWithValue: Story = {
       />
     );
   },
-  args: {
-    mode: "single",
-  },
+  args: { mode: "single" },
+  parameters: { docs: { description: { story: "Single select dropdown with a preselected value." } } },
 };
 
 export const SingleDisabled: Story = {
@@ -71,11 +67,10 @@ export const SingleDisabled: Story = {
     placeholder: "Disabled dropdown",
     disabled: true,
   },
+  parameters: { docs: { description: { story: "Single select dropdown that is disabled and not editable." } } },
 };
 
-/**
- *   Multi Select Stories
- */
+/** Multi Select Stories */
 export const MultiDefault: Story = {
   render: (args) => {
     const [value, setValue] = useState<string[]>([]);
@@ -89,9 +84,8 @@ export const MultiDefault: Story = {
       />
     );
   },
-  args: {
-    mode: "multi",
-  },
+  args: { mode: "multi" },
+  parameters: { docs: { description: { story: "Multi-select dropdown with no default selection." } } },
 };
 
 export const MultiWithValues: Story = {
@@ -107,9 +101,8 @@ export const MultiWithValues: Story = {
       />
     );
   },
-  args: {
-    mode: "multi",
-  },
+  args: { mode: "multi" },
+  parameters: { docs: { description: { story: "Multi-select dropdown with some preselected values." } } },
 };
 
 export const MultiDisabled: Story = {
@@ -120,4 +113,5 @@ export const MultiDisabled: Story = {
     placeholder: "Disabled dropdown",
     disabled: true,
   },
+  parameters: { docs: { description: { story: "Multi-select dropdown that is disabled and cannot be edited." } } },
 };

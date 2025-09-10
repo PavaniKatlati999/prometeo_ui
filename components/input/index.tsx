@@ -2,10 +2,9 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import './styles.scss'
 
 /**
- * @description A reusable Input component to handle user input.
- * @component
- * @param {InputProps} props - The properties for the Input component.
- * @returns {JSX.Element} The Input component.
+ * A reusable Input component for text, number, or password entry.
+ * Supports controlled/uncontrolled usage, placeholder, disabled, validation states, and icons.
+ * Can be used in forms, search fields, or any user input scenario.
  */
 
 const Input: React.FC<InputProps> = ({

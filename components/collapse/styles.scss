@@ -1,26 +1,66 @@
 .ui__collapse-panel {
   border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
   overflow: hidden;
   background: #fff;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
 }
 
 .ui__collapse-header {
-  padding: 12px 16px;
+  padding: 16px 18px;
   cursor: pointer;
   font-weight: 500;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f0f0f0;
   background: #fafafa;
+  transition: background-color 0.3s ease;
+  user-select: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &.open {
+    background-color: #f9f9ff;
+  }
 }
 
 .ui__collapse-arrow {
-  margin-right: 8px;
-  font-size: 12px;
+  margin-right: 16px;
+  font-size: 14px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+
+  &.rotate {
+    transform: rotate(90deg);
+  }
+}
+
+.ui__collapse-title {
+  flex: 1;
 }
 
 .ui__collapse-content {
-  padding: 12px 16px;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  animation: fadeSlide 0.35s ease;
+}
+
+/* Fade + slide animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

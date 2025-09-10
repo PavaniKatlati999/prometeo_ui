@@ -3,7 +3,8 @@ import Modal from '../modal'
 import './styles.scss'
 
 /**
- * @description A reusable Result component to display a result message.
+ * A Result component to show status messages such as success, error, warning, or info.
+ * Supports title, description, icon, and actions. Useful for feedback after operations.
  * @component
  * @param {ResultComponentProps} props - The properties for the Result component.
  * @returns {JSX.Element} The Result component.

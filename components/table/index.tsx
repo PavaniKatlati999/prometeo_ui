@@ -1,6 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { Column, FilterConfig, SortConfig, TableProps } from './types'
- import styles from './styles.scss';
+import './styles.scss';
+/**
+ * A Table component to display structured data with optional sorting, filtering, pagination,
+ * selection, and editable rows. Useful for dashboards, reports, and data management apps.
+ */
 
 function Table<T extends { id: string | number }>({
   data,

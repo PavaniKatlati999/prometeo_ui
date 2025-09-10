@@ -20,13 +20,18 @@ const meta: Meta<typeof ProgressBar> = {
 export default meta;
 type Story = StoryObj<typeof ProgressBar>;
 
+// 🔹 Default ProgressBar
 export const Default: Story = {
   args: {
     percent: 50,
     size: "small",
   },
 };
+Default.parameters = {
+  docs: { description: { story: "A basic progress bar at 50% completion." } },
+};
 
+// 🔹 ProgressBar with Info
 export const WithInfo: Story = {
   args: {
     percent: 70,
@@ -34,10 +39,17 @@ export const WithInfo: Story = {
     showInfo: true,
   },
 };
+WithInfo.parameters = {
+  docs: { description: { story: "Shows the progress percentage next to the bar." } },
+};
 
+// 🔹 Loading ProgressBar
 export const Loading: Story = {
   args: {
     percent: 0,
     isLoading: true,
   },
+};
+Loading.parameters = {
+  docs: { description: { story: "Displays an animated loading state for the progress bar." } },
 };

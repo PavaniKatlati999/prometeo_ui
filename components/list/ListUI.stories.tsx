@@ -1,124 +1,147 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CheckCircle, XCircle } from "lucide-react";
 import ListUI from "./index";
-/**
- * ListUI component is used for rendering a list of items.
- * ListUi component renders ordered or unordered lists.
- * we can also add icons or custom spacing.
- *
- *
- */
+
 const meta: Meta<typeof ListUI> = {
   title: "Components/ListUI",
   component: ListUI,
   tags: ["autodocs"],
   argTypes: {
-    ordered: { control: "boolean" },
+    ordered: {
+      control: "boolean",
+      description: "Whether the list is ordered with numbers instead of bullets",
+    },
+    bordered: {
+      control: "boolean",
+      description: "Add border around the list container",
+    },
     spacing: {
       control: "select",
       options: ["xs", "sm", "md", "lg"],
+      description: "Spacing between list items",
     },
-    className: { control: "text" },
+    size: {
+      control: "select",
+      options: ["small", "default", "large"],
+      description: "Set the size of the list like Ant Design (small, default, large).",
+    },
+    header: {
+      control: "text",
+      description: "Optional header text for the list",
+    },
+    footer: {
+      control: "text",
+      description: "Optional footer text for the list",
+    },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof ListUI>;
 
-// 🔹 Default Story
+// Sample data
+const sampleItems = [
+  { label: "First item", description: "This is the description of the first item" },
+  { label: "Second item", description: "Additional details about the second item" },
+  { label: "Third item", description: "This one also has extra info" },
+];
+
 export const Default: Story = {
   args: {
-    items: [
-      { label: "Item 1" },
-      { label: "Item 2" },
-      { label: "Item 3" },
-    ],
+    items: sampleItems,
+    size: "default",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The default ListUI renders a simple unordered list with bullets. Each item can have a label and optional description.",
+      },
+    },
   },
 };
-Default.parameters = {
-  docs: {
-    description: {
-      story: "Displays a simple unordered list with default bullet points."
-    }
-  }
-};
 
-// 🔹 Unordered List
-export const Unordered: Story = {
-  args: {
-    items: [
-      { label: "First item" },
-      { label: "Second item" },
-      { label: "Third item" },
-    ],
-    ordered: false,
-    spacing: "sm",
-  },
-};
-Unordered.parameters = {
-  docs: {
-    description: {
-      story: "An unordered list with small spacing between items."
-    }
-  }
-};
-
-// 🔹 Ordered List
 export const Ordered: Story = {
   args: {
-    items: [
-      { label: "Step One" },
-      { label: "Step Two" },
-      { label: "Step Three" },
-    ],
+    items: sampleItems,
     ordered: true,
-    spacing: "md",
+    size: "default",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The `ordered` prop switches the list markers from bullets to sequential numbers.",
+      },
+    },
   },
 };
-Ordered.parameters = {
-  docs: {
-    description: {
-      story: "Displays a numbered list (ordered) with medium spacing."
-    }
-  }
+
+export const WithHeaderAndFooter: Story = {
+  args: {
+    items: sampleItems,
+    header: "List Header",
+    footer: "List Footer",
+    bordered: true,
+    size: "default",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "You can add an optional `header` and `footer` to the list. Using `bordered` gives a card-like container similar to Ant Design’s List.",
+      },
+    },
+  },
 };
 
-// 🔹 List With Icons
 export const WithIcons: Story = {
   args: {
     items: [
-      { label: "Success item", icon: <CheckCircle size={16} /> },
-      { label: "Another success", icon: <CheckCircle size={16} /> },
-      { label: "Error item", icon: <XCircle size={16} /> },
+      { label: "Email notifications", icon: "📧" },
+      { label: "System alerts", icon: "⚠️" },
+      { label: "User messages", icon: "💬" },
     ],
-    ordered: false,
-    spacing: "md",
+    bordered: true,
+    size: "default",
   },
-};
-WithIcons.parameters = {
-  docs: {
-    description: {
-      story: "An unordered list with custom icons for each item. Supports different icon components."
-    }
-  }
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "If `icon` is passed to each item, the list will render custom markers instead of default bullets or numbers.",
+      },
+    },
+  },
 };
 
-// 🔹 Custom Spacing
-export const CustomSpacing: Story = {
+export const Small: Story = {
   args: {
-    items: [
-      { label: "Extra Spacing 1" },
-      { label: "Extra Spacing 2" },
-      { label: "Extra Spacing 3" },
-    ],
-    ordered: false,
-    spacing: "lg",
+    items: sampleItems,
+    bordered: true,
+    size: "small",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A compact list with reduced padding and smaller text, ideal for dense layouts.",
+      },
+    },
   },
 };
-CustomSpacing.parameters = {
-  docs: {
-    description: {
-      story: "List with larger spacing between items. Useful for emphasizing separation."
-    }
-  }
+
+export const Large: Story = {
+  args: {
+    items: sampleItems,
+    bordered: true,
+    size: "large",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A spacious list with larger padding and text, providing a more comfortable reading experience.",
+      },
+    },
+  },
 };

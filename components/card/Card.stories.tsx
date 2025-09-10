@@ -38,7 +38,7 @@ export const WithImage: Story = {
   args: {
     title: "Card with Image",
     body: "This card displays an image at the top.",
-    imageUrl: "https://via.placeholder.com/400x200",
+    imageUrl: "https://placehold.co/400x200",
     footer: "Footer content",
   },
   parameters: {

@@ -2,7 +2,7 @@ import React from 'react'
 import { getScrollParent } from './functions'
 import positions from './position'
 import Portal from './viewPortal'
-
+import "./styles.scss"
 
 
 // default colors
@@ -320,12 +320,21 @@ class Tooltip extends React.Component<TooltipProps, TooltipState> {
       tipPortal = (
         <Portal>
           <div {...portalProps} className={tipContentClassName || className}>
-            <span style={tipStyles} ref={(tip) => { this.tip = tip }}>
+            <span
+              className={`tooltip-bubble ${tipContentClassName || ''}`}
+              style={tipStyles}
+              ref={(tip) => { this.tip = tip }}
+            >
               {content}
             </span>
-            <span className={`${currentPositions.realDirection}-arrow`} style={arrowStyles}>
+
+            <span
+              className={`tooltip-arrow ${currentPositions.realDirection}-arrow`}
+              style={arrowStyles}
+            >
               {arrowContent}
             </span>
+
           </div>
         </Portal>
       )

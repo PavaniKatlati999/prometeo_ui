@@ -1,13 +1,13 @@
 .ui__collapse-panel {
   border: 1px solid #ddd;
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   overflow: hidden;
   background: #fff;
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   }
 }
 

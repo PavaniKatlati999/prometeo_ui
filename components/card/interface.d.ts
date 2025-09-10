@@ -9,4 +9,6 @@ interface CardProps {
   variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
   onClick?: () => void
   children?: React.ReactNode
+  imageStyle?: React.CSSProperties;
+
 }

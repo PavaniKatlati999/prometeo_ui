@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = (props) => {
       style={style}
       onClick={onClick}
     >
-      {imageUrl && <img src={imageUrl} className="card-img-top" alt="Card image" />}
+      {imageUrl && <img src={imageUrl} className="card-img-top" alt="Card image" style={props.imageStyle} />}
       {(title || extra) && (
         <div className="card-header">
           <div>{title}</div>

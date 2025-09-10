@@ -138,7 +138,7 @@ export const MultiSelectDropdown = ({ options, value, placeholder, style, handle
  * @returns {JSX.Element} The SingleSelectDropdown component.
  */
 
-export const SingleSelectDropdown = ({ options, value, placeholder, style, handleChange, disabled, tooltipTitle, tooltipPosition = 'top'}: SingleSelectProp) => {
+export const SingleSelectDropdown = ({ options, value, placeholder, style, handleChange, disabled, tooltipTitle, tooltipPosition = 'top' }: SingleSelectProp) => {
   const wrapperRef = React.useRef(null)
   const [selected, setSelected] = React.useState(value || null)
   const [toggle, setToggle] = React.useState(false)
@@ -159,12 +159,36 @@ export const SingleSelectDropdown = ({ options, value, placeholder, style, handl
   return (
     <div className={`ui__select_dropdown ${disabled ? 'disabled bg-light cursor-not-allowed' : ''}`} ref={wrapperRef} style={style}>
       <div className="ui__select_dropdown__selected single_select" onClick={() => !disabled && setToggle(!toggle)}>
-      <Tooltip direction = {tooltipPosition}content={tooltipTitle || ''}>
-      {<span>{value ? value : placeholder}</span>}
-          </Tooltip>
+        <Tooltip direction={tooltipPosition} content={tooltipTitle || ''}>
+          {<span>{value ? value : placeholder}</span>}
+        </Tooltip>
       </div>
       <div className="ui__select_dropdown__arrow">
-        {toggle ? (<img src="/icons/ArrowDropUp.svg" alt="arrow-up" />) : (<img src="/icons/ArrowDropDown.svg" alt="arrow-down" />)}
+        {toggle ? (
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            role="img"
+            aria-label="Collapse"
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon icon--up"
+          >
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+          </svg>
+        ) : (
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            role="img"
+            aria-label="Expand"
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon icon--down"
+          >
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+          </svg>
+        )}
       </div>
 
       {toggle && (

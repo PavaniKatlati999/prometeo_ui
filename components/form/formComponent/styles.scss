@@ -5,26 +5,26 @@
     &.horizontal {
       display: flex;
     }
-  
+
     &.small {
-      font-size: 12px;
+      font-size: 16px;
     }
     &.large {
       font-size: 16px;
     }
-  
+
     .custom-form-item {
       margin-bottom: 1rem;
-  
+
       &.vertical {
         display: block;
       }
-  
+
       &.horizontal {
         display: flex;
         align-items: center;
       }
-  
+
       .form-item-label {
         margin-right: 1rem;
         &.left {
@@ -41,15 +41,15 @@
           color: #ff4d4f;;
         }
       }
-  
+
       .form-item-input-wrapper {
         position: relative;
-  
+
         .input-error {
           border-color: #ff4d4f;;
         }
       }
-  
+
       .form-item-error {
         color:#ff4d4f;
         font-size: 14px;
@@ -60,4 +60,3 @@
       }
     }
   }
-  

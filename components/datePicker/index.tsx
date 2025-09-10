@@ -5,8 +5,7 @@ import classNames from 'classnames';
 import "./styles.scss"
 
 /**
- * A DatePicker component for selecting dates (single or range) with optional formatting,
- * min/max dates, and disabled states. Suitable for forms, scheduling, or calendar inputs.
+ * A DatePicker component for selecting dates. Suitable for forms, scheduling, or calendar inputs.
  */
 const DatePicker: React.FC<DatePickerProps> =({
   value,

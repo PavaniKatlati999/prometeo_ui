@@ -206,7 +206,7 @@ export default function DataTable<T extends object>({
       boxSizing: "border-box",
       minWidth: column.getSize(),
       width: column.getSize(),
-      padding: "8px 10px",
+      padding: "8px 8px",
       background: isHeader ? "#f8f9fa" : "#fff",
       borderBottom: "1px solid #e9ecef",
       overflow: "hidden",
@@ -258,7 +258,7 @@ export default function DataTable<T extends object>({
             placeholder="Search..."
             value={globalFilter}
             onChange={e => setGlobalFilter(e.target.value)}
-            style={{ padding: "6px 10px", borderRadius: 6, border: "1px solid #ccc" }}
+            style={{ padding: "6px 8px", borderRadius: 6, border: "1px solid #ccc" }}
           />
         </div>
       )}
@@ -360,7 +360,7 @@ export default function DataTable<T extends object>({
             onClick={() => setPage(p => Math.max(p - 1, 0))}
             disabled={page === 0}
             style={{
-              padding: "6px 12px",
+              padding: "6px 16px",
               borderRadius: "8px",
               border: "1px solid #ddd",
               background: page === 0 ? "#f5f5f5" : "#fff",
@@ -380,7 +380,7 @@ export default function DataTable<T extends object>({
                       setPage(i)
                     }}
                     style={{
-                      padding: "6px 12px",
+                      padding: "6px 16px",
                       borderRadius: "8px",
                       border: "1px solid #ddd",
                       background: i === page ? "#228be6" : "#fff",
@@ -407,7 +407,7 @@ export default function DataTable<T extends object>({
             onClick={() => setPage(p => Math.min(p + 1, totalPages - 1))}
             disabled={page === totalPages - 1}
             style={{
-              padding: "6px 12px",
+              padding: "6px 16px",
               borderRadius: "8px",
               border: "1px solid #ddd",
               background: page === totalPages - 1 ? "#f5f5f5" : "#fff",
